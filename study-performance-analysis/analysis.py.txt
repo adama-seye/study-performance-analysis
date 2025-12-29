@@ -1,0 +1,16 @@
+import csv
+
+study_hours = []
+scores = []
+
+with open("data.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        study_hours.append(int(row["study_hours"]))
+        scores.append(int(row["exam_score"]))
+
+average_hours = sum(study_hours) / len(study_hours)
+average_score = sum(scores) / len(scores)
+
+print("Average study hours:", average_hours)
+print("Average exam score:", average_score)
